@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class InvoiceWithDiscount {
+public class InvoiceWithDiscount extends Invoice{
+
+
+    public InvoiceWithDiscount(double amountBeforeTax, double taxRate) {
+        super(amountBeforeTax, taxRate);
+    }
 }

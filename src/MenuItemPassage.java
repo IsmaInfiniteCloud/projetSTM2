@@ -1,14 +1,21 @@
 import java.util.Scanner;
 
-public class Passage {
+public class MenuItemPassage {
     //attribus
-    private int prix;
+    private double prix;
+    private boolean aUnRabais ;
     String input = "";
-    String choixMenuPassage = "";
+
     Scanner scanner = new Scanner(System.in);
 
+    public MenuItemPassage(double prix, boolean aUnRabais, Scanner scanner) {
+        this.prix = prix;
+        this.aUnRabais = aUnRabais;
+        this.scanner = scanner;
+    }
+
     //Getters
-    public int getPrix() {
+    public double getPrix() {
         return prix;
     }
 
@@ -16,7 +23,6 @@ public class Passage {
     public void setPrix(int prix) {
         this.prix = prix;
     }
-
     final static String MENUPASSAGE = "*Bienvenue a la STM      *\n" +
             "*Categories des titres de transport :       *\n" +
             "*Veuillez choisir une categorie d'achat :   *\n" +
@@ -30,7 +36,7 @@ public class Passage {
             "";
 
 
-    public int afficherMenuPassage() {
+    public double start() {
         System.out.println(MENUPASSAGE);
         boolean valid = false;
         while (!valid) {
